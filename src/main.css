@@ -1,0 +1,5 @@
+.appLayout {
+    display: grid;
+    grid-template-areas: "nav canvas other"
+"nav timeline other";
+}
