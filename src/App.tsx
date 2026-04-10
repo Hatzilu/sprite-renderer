@@ -1,12 +1,23 @@
 import { Application, extend, useApplication, useTick } from "@pixi/react";
-import { Assets, Container, Sprite, Texture } from "pixi.js";
+import {
+  Assets,
+  Container,
+  Sprite,
+  Texture,
+  Text,
+  Stage,
+  Graphics,
+} from "pixi.js";
 import { useEffect, useRef, useState } from "react";
-import './main.css';
+import "./main.css";
+import Button from "./components/atoms/Button";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
   Container,
   Sprite,
+  Graphics,
+  Text,
 });
 
 const BunnySprite = () => {
@@ -47,16 +58,29 @@ const BunnySprite = () => {
 
 export default function App() {
   // We'll wrap our components with an <Application> component to provide
-  // the Pixi.js Application context
-  const canvas = useRef<HTMLDivElement>(null);
+  // the Pxi.js Application context
+
+  const canvasRef = useRef<HTMLDivElement>(null);
   return (
     <div className="appLayout">
+      <section className="section mainSection">
+        <div className="assetsLibrary">
+          <h1>assets</h1>
+        </div>
+        <div className="canvasContainer" ref={canvasRef}>
 
-      <main className="canvas" ref={canvas}>
-        <Application background={"#1099bb"} resizeTo={canvas?.current}>
+        <Application background={"#1099bb"} resizeTo={canvasRef?.current}>
           <BunnySprite />
         </Application>
-      </main>
+        </div>
+        <div>
+          <h1>idk</h1>
+        </div>
+      </section>
+
+      <section>
+        <h1>timeline</h1>
+      </section>
     </div>
   );
 }

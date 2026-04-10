@@ -1,5 +1,28 @@
+#app, #pixi-container {
+    width: 100vw;
+    height: 100vh;
+}
 .appLayout {
-    display: grid;
+    /* display: grid;
     grid-template-areas: "nav canvas other"
-"nav timeline other";
+"nav timeline other"; */
+display: flex;
+flex-direction: column;
+}
+
+.section {
+    display: flex;
+    gap: 1rem;
+    width: 100vw;
+}
+
+.mainSection {
+    height: 70vh;
+}
+
+.canvasContainer {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
