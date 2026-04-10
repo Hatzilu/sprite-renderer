@@ -11,6 +11,8 @@ import {
 import { useEffect, useRef, useState } from "react";
 import "./main.css";
 import Button from "./components/atoms/Button";
+import AssetLibrary from "./components/organisms/AssetLibrary/AssetLibrary";
+import Timeline from "./components/organisms/AssetLibrary/Timeline/Timeline";
 
 // extend tells @pixi/react what Pixi.js components are available
 extend({
@@ -64,14 +66,11 @@ export default function App() {
   return (
     <div className="appLayout">
       <section className="section mainSection">
-        <div className="assetsLibrary">
-          <h1>assets</h1>
-        </div>
+        <AssetLibrary />
         <div className="canvasContainer" ref={canvasRef}>
-
-        <Application background={"#1099bb"} resizeTo={canvasRef?.current}>
-          <BunnySprite />
-        </Application>
+          <Application background={"#1099bb"} resizeTo={canvasRef?.current}>
+            <BunnySprite />
+          </Application>
         </div>
         <div>
           <h1>idk</h1>
@@ -79,7 +78,7 @@ export default function App() {
       </section>
 
       <section>
-        <h1>timeline</h1>
+        <Timeline />
       </section>
     </div>
   );
